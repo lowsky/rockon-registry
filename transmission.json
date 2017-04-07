@@ -1,10 +1,11 @@
 {
     "Transmission": {
-	"description": "Open Source BitTorrent client",
+        "description": "Open Source BitTorrent client",
+        "volume_add_support": true,
         "ui": {
             "slug": ""
         },
-	"version": "1.0",
+        "version": "1.0",
         "website": "http://www.transmissionbt.com/",
         "containers": {
             "transmission": {
@@ -30,19 +31,29 @@
                         "label": "Data Storage"
                     }
                 },
-		"environment": {
-		    "TRUSER": {
-			"description": "Choose a login username for Transmission WebUI.",
-			"label": "WebUI username",
-			"index": 1
+                "environment": {
+                    "TRUSER": {
+                        "description": "Choose a login username for Transmission WebUI.",
+                        "label": "WebUI username",
+                        "index": 1
+                    },
+                    "TRPASSWD": {
+                        "description": "Choose a login password for the Transmission WebUI.",
+                        "label": "WebUI password",
+                        "default": "admin",
+                        "index": 2
 		    },
-		    "TRPASSWD": {
-			"description": "Choose a login password for the Transmission WebUI.",
-			"label": "WebUI password",
-			"default": "admin",
-			"index": 2
-		    }
-		}
+		    "USERID": {
+			"description": "Choose a UID to run transmission as.",
+			"label": "UID",
+			"index": 3
+		    },
+		    "GROUPID": {
+			"description": "Choose a GID to run transmission as.",
+			"label": "GID",
+			"index": 4
+                    }
+                }
             }
         }
     }
